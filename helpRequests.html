@@ -19,28 +19,21 @@
         <script src="js/bootstrap.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
-        <!--        ydtuyiwueiljqoòkldkfj-->
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
 
-
+        <!--        ydtuyiwueiljqoòkldkfj-->
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <link href="css/helprequeststylesheet.css" rel="stylesheet">
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
         <script type="text/javascript" src="js/helprequests.js"></script>
-
         <script src="js/navbar.js"></script>
-
         <script src="js/operators.js"></script>
-
-
         <script type="text/javascript" src="js/customalert.js"></script>
-
-
-
         <script type="text/x-javascript" src="js/userstatus.js"></script>
+        
     </head>
     <body id="b">
         <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
@@ -68,15 +61,15 @@
                     </li>
                     <li class="vl"></li>
                     <li class="nav-item" id="login">
-
                         <a class="nav-link active" href="LogIn.html">Log in</a>
                     </li>
+                    
                 </ul>
             </div>
         </nav>
         <style>
-            .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
-            .toggle.ios .toggle-handle { border-radius: 20px; }
+            .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; border: 2px solid gray; }
+            .toggle.ios .toggle-handle { border-radius: 20px; border: 2px solid gray; }
         </style>
         <!-- Button trigger modal -->
 
@@ -84,7 +77,7 @@
 
             <h2 class="display-4 text-center"  >List of open requests 
                 <input id="toggle-event" type="checkbox" data-toggle="toggle" data-style="ios" data-off="Filter" data-on="off"> </h2>
-            <h1 class="display-4"style="display: block;text-align: center;font-size: 20px"> Pending requests: <span class="badge badge-pill badge-danger" id="myBadgeReq">2</span></h1>
+            <h1 class="display-4"style="display: block;text-align: center;font-size: 20px"> Pending requests: <span class="badge badge-pill badge-danger" id="myBadgeReq">...</span></h1>
             <script>
                 $(function() {
                     $('#toggle-event').bootstrapToggle();
@@ -121,7 +114,7 @@
             </table> 
 
         </div>
-
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLongTitle">Reply to student:</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><form><div class="form-group"><label class="col-form-label">Message:</label><textarea class="form-control" id="MERDA"></textarea></div></form></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="REP" >Send Message</button></div></div></div></div>
         
 
 

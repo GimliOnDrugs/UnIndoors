@@ -7,6 +7,9 @@ The main idea behind that is the application can be access as student and operat
 ### Student
 1. Open the homepage and through the navbar click on 'Sign up'
 2. Create a new account @gmail
+<<<<<<< HEAD
+3. Through the navbar click on 'Log In' and log in using username and password pre
+=======
 3. Through the navbar click on 'Log In' and log in using username and password previously registered
 4. After the login you'll be redirected to the classes page, where the scheduling of lessons is given. Make sure each class has hour, teacher, place.
 5. Open a request for help to an operator. Check the badge under the title that should indicate how many operators are currently available.
