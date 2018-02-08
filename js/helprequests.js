@@ -104,7 +104,7 @@ function setRequestDenied(id,childSnapshotIndex,count,index){
 
 function setReplyMsg(idReq,msg,index){
     
-    alert('msg: '+msg+'  idReq: '+idReq+'  index: '+index)
+    //alert('msg: '+msg+'  idReq: '+idReq+'  index: '+index)
     database.ref('users/'+idReq+'/helprequests/'+index+'/operator_message/').set(msg).then(sucess=>{
         
         $('#REP').unbind('click')
@@ -128,5 +128,4 @@ function updateRequestForStudent(idReq,stateToSet,index){
     })
 
 }
-
 

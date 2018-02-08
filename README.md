@@ -19,7 +19,8 @@ Create a new Firebase project in order to get the API key to connect to you own 
 
 Just open the file index.html using one of your favourite IDE.
 
-
+### Android app ###
+The related Android app is available at [Uniboors](https://github.com/giacomobartoli/Uniboors) repository.
  
 ## Screenshots ##
  
