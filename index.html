@@ -11,7 +11,8 @@
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/loginpagestylesheet.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+        <link href="css/indexstylesheet.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
                 crossorigin="anonymous"></script>
@@ -50,7 +51,7 @@
             <div class="collapse navbar-collapse" id="menu_start">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
                     <li>
-                   <a class="nav-link" href="OtherPlaces.html">All Places</a>
+                   <a class="nav-link" onclick="onClickFindPlaces()">All Places</a>
                    
                    </li>
                     <li class="nav-item">
@@ -86,25 +87,30 @@
             <h1 class="display-4 text-center"  >Finding your classroom shouldn't be a treasure hunt</h1>
         </div>
         <div class="container-fluid" >
-            <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
-                <div class="col">
+            <div class="row" style="margin-top: 50px;margin-bottom: 30px;">
+                <div class="col-auto">
                     <div>
                         <img class="rounded w3-container w3-center w3-animate-left" src="css/assets/explore.svg" id="image_explore">
                     </div>
                 </div>
-                <div class="col">
-                    <p class="text-center font-italic" style="font-size: 30px;"> "For the lessons are dark, and full of terrors" </p>
-                    <p  class="text-center" style="font-size: 20px; margin-top: 30px;"> Every engineering student knows lessons are complicated enough, so why should get to class be hard as well? 
+                <div class="col  ">
+                      <p class="text-center font-italic " style="font-size: 30px;"> "For the lessons are dark, and full of terrors" </p>
+                    <div class="col col-center d-block mx-auto my-auto">
+                    <p  class="text-left  d-block mx-auto my-auto" style="font-size: 20px;"> Every engineering student knows lessons are complicated enough, so why should get to class be hard as well? 
                         Start using Uniboors right now and enjoy your trip to class!
                     </p>
-                    <button class="btn btn-secondary btn-lg mx-auto my-auto d-block" id="find_classes_btn" style="width:200px; margin-top: 40px;" onclick="onClickFindYourClass()">Find your class</button>
+                    
+                    </div>
+                  
+                    
+                    <button class="btn btn-secondary btn-lg mx-auto my-auto d-block" id="find_classes_btn" onclick="onClickFindYourClass()">Find your class</button>
                 </div>
             </div>
         </div>
         <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 30px; ">
             <hr>
             <h1 class="display-4 text-center">Simple and intuitive</h1>
-            <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
+            <div class="row" style="margin-top: 50px;margin-bottom: 30px;">
                 <div class="col">
                     <p class="text-center font-italic" style="font-size: 30px;">All your lessons available everywhere, anytime</p>
                     <p class="text-center" style="font-size: 20px; margin-top: 30px;">Uniboors strength is its simplicity: enter in the website and easily find your lesson. Did you forget where Web Applications' lesson is? Do you not remember if there is a laboratory session or a regular lecture? Not a problem! All the necessary information are daily updated for you
@@ -134,8 +140,8 @@
                 <hr>
                 <h1 class="display-4 text-center">Accessibility is the key</h1>
                 <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
-                    <div class="col">
-                        <p class="text-center font-italic" style="font-size: 30px;">Going to classroom should be an easy task for everyone</p>
+                    <div class="col ">
+                        <p class="text-center font-italic mx-auto my-auto" style="font-size: 30px;">Going to classroom should be an easy task for everyone</p>
                         <p class="text-center" style="font-size: 20px; margin-top: 30px;">Using UnIndoors you can easily open requests for help. Operators will reach you in few minutes!
                         </p>
                     </div>

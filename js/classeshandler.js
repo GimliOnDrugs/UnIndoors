@@ -20,6 +20,7 @@ var pageWidth=$(window).width()
 
 
 function setUpTodayClasses(size) {
+    console.log('CALLED')
     var date = new Date();
     var today = date.getDay();
 
@@ -109,7 +110,11 @@ function setUpTodayClasses(size) {
 
         });
         $('.loader-classes').remove()
-        $('.footer').append('<div class="container-fluid" ><div class="row align-items-center" ><div class="col"></div><div class="col-auto "><div class="container " ><img class="d-block my-auto" height="80" width="200" src=logo.png><h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6></div></div><div class="col"></div></div></div>')
+        var footer= $('.footer')
+        if(footer.children().length==0){
+            footer.append('<div class="container-fluid" ><div class="row align-items-center" ><div class="col"></div><div class="col-auto "><div class="container " ><img class="d-block my-auto" height="80" width="200" src=logo.png><h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6></div></div><div class="col"></div></div></div>')
+        }
+
 
     });
 
@@ -234,7 +239,7 @@ function renderDay(dayNumber){
 }
 
 function fillCarouselRow(todayClass,carouselInnerElementID,carouselOuterElementID,numberOfImagesPerSlide){
-
+    console.log(numberOfImagesPerSlide)
     var name=todayClass.name;
     var imageUrl=todayClass.imageUrl;
     var timeStart=todayClass.timeStart;
@@ -247,7 +252,6 @@ function fillCarouselRow(todayClass,carouselInnerElementID,carouselOuterElementI
     var uniqid = Date.now()
 
     var elementOfRow='<div class="col col-grid"><div class="card" id="'+todayClass.type+uniqid+'"><img class="card-img-top" src="'+imageUrl+'" alt="Card image cap"><div class="card-body"> <h4 class="card-title text-center">'+name+'</h4><div class="container adjust items center" style="margin-top:10px"><div class="row align-items-center align-self-center style="margin-top:15px;"><div class="col-4 justify-content-center align-self-center icon_wrapper " ><img class="rounded float-right" src="css/assets/clock.svg" style="display:block;width:30px; height: 30px;" id="clock"></div><div class="col no-gutters align-self-center justify-content-center"  ><p class="detail my-auto text-left text-capitalize" id="time_and_day" style="color: black; font-size:20px">'+day+', '+timeStart+':00</p></div></div></div></div></div></div>';
-
     if(innerElement.children().length==0){
         var carouselItem=$('<div class="carousel-item" id="'+carouselOuterElementID+'" ></div>').appendTo(innerElement)     
         row=$('<div class="row row-grid"></div>').appendTo(carouselItem)        

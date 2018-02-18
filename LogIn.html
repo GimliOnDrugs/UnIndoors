@@ -14,7 +14,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
                 crossorigin="anonymous"></script>
         <script src="js/bootstrap.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
         <script>
             // Initialize Firebase
             var config = {
@@ -28,7 +28,7 @@
             firebase.initializeApp(config);
         </script>
 
- 
+
         <script src="js/userstatus.js"></script>
 
         <script>
@@ -61,7 +61,14 @@
                     }
                     else{
                         $('.loader').remove()
-                        location.replace("Classes.html");
+                        if(localStorage.getItem("otherplaces_clicked")!=null){
+                            location.replace("OtherPlaces.html")
+                            localStorage.removeItem("otherplaces_clicked")
+                        }
+                        else{
+                            location.replace("Classes.html");
+
+                        }
                     }
 
                 }).catch(function (error) {
@@ -98,7 +105,7 @@
 
             <div class="collapse navbar-collapse" id="menu_start">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-                    
+
 
                 </ul>
                 <ul class="navbar-nav navbar-right" id="login_signup_navbar">
@@ -121,7 +128,7 @@
                 <form>
                     <div class="form-group">
                         <label for="email_input">E-mail address</label>
-                        <input type="email" class="form-control" id="email_input" aria-describedby="email_help" placeholder="mymailaddress@emailprovider.com" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                        <input type="email" class="form-control" id="email_input" aria-describedby="email_help" placeholder="mymailaddress@emailprovider.com" data-container="body" data-toggle="popover" data-placement="right">
                         <small id="email_help" class="form-text text-muted">Enter your e-mail</small>
                         <div class="invalid-feedback">Wrong e-mail</div>
                         <div class="valid-feedback">Looks good!</div>
@@ -152,8 +159,8 @@
                 <p>&nbsp;</p>
             </div>
         </div>
-  
-      
+
+
     </body>
 
 </html>

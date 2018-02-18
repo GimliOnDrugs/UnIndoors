@@ -8,7 +8,7 @@ connectedRef.on("value", function(snap) {
         firebase.auth().onAuthStateChanged(function(user){
             if(user && user.email.includes('operatore')){
                 firebase.database().ref('operators/'+user.uid+'/status/').set('online')
-            
+
             }
             setDailyCookie()
 
@@ -16,7 +16,9 @@ connectedRef.on("value", function(snap) {
     } else {
         firebase.auth().onAuthStateChanged(function(user){
 
-            if(user.email.includes('operatore')){
+           
+            
+            if(user && user.email.includes('operatore')){
                 firebase.database().ref('operators/'+user.uid+'/status/').onDisconnect().set('offline')
             }
 

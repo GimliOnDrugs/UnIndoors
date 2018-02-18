@@ -53,6 +53,12 @@
     min-height: 150px;
     min-width: 250px;
 }
+.footer{
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color:#424949;
+}
 .tech-showcase-img{
     height: 200px;
     display: block;

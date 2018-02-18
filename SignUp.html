@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Log in</title>
+        <title>Sign Up</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,10 +50,37 @@
                 var familyName=$('#surname_input').val();
                 var buttonContainer=$('#button_container')
                 var nameRegex=/[a-zA-Z]+/
+                var nameDom=$('#name_input')
+                var surnameDom=$('#surname_input')
+                var emailDom=$('#email_input')
+                var passwordDom=$('#password_input')
+                emailDom.removeClass('is-valid')
+                emailDom.removeClass('is-invalid')
+                passwordDom.removeClass('is-valid')
+                passwordDom.removeClass('is-invalid')
+
+                nameDom.removeClass('is-valid')
+                nameDom.removeClass('is-invalid')
+                surnameDom.removeClass('is-valid')
+                surnameDom.removeClass('is-invalid')                
                 buttonContainer.append( '<div class="loader submit-loader d-block mx-auto"></div>')
-                if(!name.match(nameRegex)){
-                    $('#name_input').removeClass('valid-feedback')
-                    $('#name_input').addClass('invalid-feedback')
+                if(!name.match(nameRegex) && familyName.match(nameRegex)){
+                    $('.loader').remove()
+
+                    surnameDom.addClass('is-valid')
+                    $('#name_input').addClass('is-invalid')
+                }
+                else if(!familyName.match(nameRegex) && name.match(nameRegex)){
+                    $('.loader').remove()
+
+                    nameDom.addClass('is-valid')
+                    surnameDom.addClass('is-invalid')
+                }
+                else if(!name.match(nameRegex) && !familyName.match(nameRegex)){
+                    $('.loader').remove()
+                    surnameDom.addClass('is-invalid')
+                    $('#name_input').addClass('is-invalid')
+
                 }
                 else{
                     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
@@ -106,10 +133,25 @@
 
                     }).catch(function (error) {
                         $('.loader').remove()
+                        nameDom.addClass('is-valid')
+                        surnameDom.addClass('is-valid')
 
-                        alert(error.code)
+                        $(function () {
+                            if(error.code.includes('invalid-email')){
+                                emailDom.addClass('is-invalid')
+                                passwordDom.addClass('is-valid')
 
-                    }); 
+                            }
+
+                            if(error.code.includes('weak-password') ){
+                                passwordDom.addClass('is-invalid')
+                                emailDom.addClass('is-valid')
+                            }
+
+
+
+                        })
+                    })
                 }
 
 
@@ -130,7 +172,7 @@
 
             <div class="collapse navbar-collapse" id="menu_start">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-                   
+
 
                 </ul>
                 <ul class="navbar-nav navbar-right" id="login_signup_navbar">
@@ -146,17 +188,29 @@
             </div>
         </nav>
 
-        <div class="container-fluid" style="margin-top: 120px; height: 100vh;">
+        <div class="container-fluid" style="margin-top: 120px; margin-bottom: 80px; height: 100vh;">
             <img src="css/assets/student-happy.svg" class="rounded mx-auto d-block w3-container w3-center w3-animate-top" id="login_student">
             <div id="form" class="mx-auto d-block">
 
                 <form>
                     <div class="form-group">
                         <label for="username_input">Name</label>
-                        <input type="text" class="form-control" id="name_input" aria-describedby="name_help" placeholder="William">
+                        <input type="text" class="form-control" id="name_input" aria-describedby="name_help" placeholder="William" data-container="body" data-toggle="popover" data-placement="right">
                         <small id="name_help" class="form-text text-muted">Enter your name</small>
                         <div class="invalid-feedback">Please give a valid name</div>
                         <div class="valid-feedback">Nice name you got there!</div>
+
+
+                        <!--
+<label for="email_input">E-mail address</label>
+<input type="email" class="form-control" id="email_input" aria-describedby="email_help" placeholder="mymailaddress@emailprovider.com" data-container="body" data-toggle="popover" data-placement="right">
+<small id="email_help" class="form-text text-muted">Enter your e-mail</small>
+<div class="invalid-feedback">Wrong e-mail</div>
+<div class="valid-feedback">Looks good!</div>
+-->
+
+
+
                     </div>
                     <div class="form-group">
                         <label for="surname_input">Family Name</label>
@@ -190,13 +244,23 @@
 
             </div>
         </div>
-        <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 0px; background-color:#424949;" align="middle">			
-            <p>&nbsp;</p>			
-            <div class="col" align="middle" style="margin-top:30px;">
-                <img height="80" width="200" src=logo.png>
-                <h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6>
-                <p>&nbsp;</p>
+     <footer class="footer">
+
+            <div class="container-fluid" >
+                <div class="row align-items-center" >
+                    <div class="col"></div>
+                    <div class="col-auto ">
+                        <div class="container " >
+                            <img class="d-block my-auto" height="80" width="200" src=logo.png>
+                            <h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6>
+                        </div>
+
+                    </div>
+                    <div class="col"></div>
+                </div>
+
             </div>
-        </div>
+
+        </footer>
     </body>
 </html>
