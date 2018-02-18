@@ -100,7 +100,7 @@ function setUpTodayClasses(size) {
                     if(size>=1000){
                         fillCarouselRow(todayClass,'#week_classes_inner','#carousel_week_classes',3);
                     }
-                    $('.loader-classes').remove()
+
 
                 });
 
@@ -108,6 +108,8 @@ function setUpTodayClasses(size) {
             });
 
         });
+        $('.loader-classes').remove()
+        $('.footer').append('<div class="container-fluid" ><div class="row align-items-center" ><div class="col"></div><div class="col-auto "><div class="container " ><img class="d-block my-auto" height="80" width="200" src=logo.png><h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6></div></div><div class="col"></div></div></div>')
 
     });
 
