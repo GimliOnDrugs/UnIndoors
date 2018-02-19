@@ -186,13 +186,56 @@
             $(window).resize(function(){
                 var todayInner=$('#today_classes_inner')
                 var nextInner=$("#next_classes_inner")
-                todayInner.empty()
-                nextInner.empty()
+//                todayInner.empty()
+//                nextInner.empty()
 
                 var width=$( window ).width();
+                //
+                //
+                //                setUpTodayClasses(width)
+                //                if(width>=1000){
+                //                    var title=jQuery('.title')
+                //
+                //                    if(title.hasClass('display-3')){
+                //                        title.removeClass('display-3')
+                //                        title.addClass('display-2')
+                //                    }
+                //
+                //
+                //                }
+                //                if(width>=768 && width<1000){
+                //                    console.log("only two")
+                //                    var title=jQuery('.title')
+                //                    if(title.hasClass('display-2')){
+                //                        title.removeClass('display-2')
+                //                        title.addClass('display-3')
+                //                    }
+                //                    else{
+                //                        title.removeClass('display-4')
+                //                        title.addClass('display-3')
+                //                    }
+                //
+                //                }
+                //                if(width<768){
+                //                    console.log("only one")
+                //                    var title=jQuery('.title')
+                //
+                //                    if(title.hasClass('display-3')){
+                //                        title.removeClass('display-3')
+                //                        title.addClass('display-4')
+                //                    }
+                //                    if(title.hasClass('display-2')){
+                //                        title.removeClass('display-2')
+                //                        title.addClass('display-4')
+                //                    }
+                //                    $('#searchs').css('max-width','130px')
+                //                    $('#btn-submit').css('margin-left','10px')
+                //
+                //                }
 
 
-                setUpTodayClasses(width)
+                //
+             //   resetClickListeners()
                 if(width>=1000){
                     var title=jQuery('.title')
 
@@ -200,6 +243,11 @@
                         title.removeClass('display-3')
                         title.addClass('display-2')
                     }
+
+                    console.log("only three")
+                    resizeAlgorithm(3,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
+
+                    resizeAlgorithm(3,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
 
 
                 }
@@ -215,6 +263,10 @@
                         title.addClass('display-3')
                     }
 
+                    resizeAlgorithm(2,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
+
+                    resizeAlgorithm(2,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
+
                 }
                 if(width<768){
                     console.log("only one")
@@ -228,62 +280,11 @@
                         title.removeClass('display-2')
                         title.addClass('display-4')
                     }
-                    $('#searchs').css('max-width','130px')
-                    $('#btn-submit').css('margin-left','10px')
+
+                    resizeAlgorithm(1,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
+                    resizeAlgorithm(1,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
 
                 }
-
-
-//
-//                if(width>=1000){
-//                    var title=jQuery('.title')
-//
-//                    if(title.hasClass('display-3')){
-//                        title.removeClass('display-3')
-//                        title.addClass('display-2')
-//                    }
-//
-//                    console.log("only three")
-//                    resizeAlgorithm(3,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
-//                   
-//                    resizeAlgorithm(3,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
-//
-//
-//                }
-//                if(width>=768 && width<1000){
-//                    console.log("only two")
-//                    var title=jQuery('.title')
-//                    if(title.hasClass('display-2')){
-//                        title.removeClass('display-2')
-//                        title.addClass('display-3')
-//                    }
-//                    else{
-//                        title.removeClass('display-4')
-//                        title.addClass('display-3')
-//                    }
-//
-//                    resizeAlgorithm(2,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
-//                   
-//                    resizeAlgorithm(2,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
-//
-//                }
-//                if(width<768){
-//                    console.log("only one")
-//                    var title=jQuery('.title')
-//
-//                    if(title.hasClass('display-3')){
-//                        title.removeClass('display-3')
-//                        title.addClass('display-4')
-//                    }
-//                    if(title.hasClass('display-2')){
-//                        title.removeClass('display-2')
-//                        title.addClass('display-4')
-//                    }
-//
-//                    resizeAlgorithm(1,getCarouselItems('#today_classes_inner'),'#today_classes_inner','#carousel_today_classes')
-//                    resizeAlgorithm(1,getCarouselItems('#next_classes_inner'),'#next_classes_inner','#carousel_next_classes')
-//
-//                }
 
             })
             $(document).ready(function(){

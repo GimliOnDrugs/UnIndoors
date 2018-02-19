@@ -11,7 +11,7 @@
         <!-- Bootstrap CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/loginpagestylesheet.css" rel="stylesheet" />
-<!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+        <!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
         <link href="css/indexstylesheet.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
@@ -19,7 +19,7 @@
         <script src="js/bootstrap.js"></script>
         <script href="js/loginpage.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
+        <script src="js/index.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
         <script>
@@ -32,11 +32,8 @@
                 storageBucket: "uniboindoors.appspot.com",
                 messagingSenderId: "484831871025"
             };
-            console.log('sdjhfjkl')
             firebase.initializeApp(config);
-            firebase.database().ref('CesenaCampus/').once('child_added',snap=>{
-                alert(snap.key)
-            })
+         
         </script>
         <script src="js/navbar.js"></script>
         <script type="text/javascript" src="js/customalert.js"></script>
@@ -51,9 +48,9 @@
             <div class="collapse navbar-collapse" id="menu_start">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
                     <li>
-                   <a class="nav-link" onclick="onClickFindPlaces()">All Places</a>
-                   
-                   </li>
+                        <a class="nav-link" onclick="onClickFindPlaces()">All Places</a>
+
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="onClickFindYourClass()">My Classes</a>
                     </li>
@@ -69,11 +66,11 @@
                 </ul>
             </div>
         </nav>
-        
-       <div class=" jumbotron-fluid" id="start_jumb">
+
+        <div class=" jumbotron-fluid" id="start_jumb">
 
             <div class=" centered">
-                <h1 class="display-4">Welcome to Uniboors!</h1>
+                <h1 class="display-4 title">Welcome to Uniboors!</h1>
                 <p class="lead" style="font-weight: 400">A web app designed to deliver the best indoors navigation experience right at the school of Computer
                     Science and Engineering, in the heart of Cesena</p>
                 <p class="alignlead text-lg-center">
@@ -82,35 +79,39 @@
             </div>
 
         </div>
-        
+
         <div class="container-fluid" style="margin-top: 30px;" id="explore">
-            <h1 class="display-4 text-center"  >Finding your classroom shouldn't be a treasure hunt</h1>
+            <h1 class="display-4 text-center title"  >Finding your classroom shouldn't be a treasure hunt</h1>
         </div>
         <div class="container-fluid" >
-            <div class="row" style="margin-top: 50px;margin-bottom: 30px;">
-                <div class="col-auto">
+            <div class="row" id="explorer" style="margin-top: 50px;margin-bottom: 30px;">
+                <div class="col">
                     <div>
-                        <img class="rounded w3-container w3-center w3-animate-left" src="css/assets/explore.svg" id="image_explore">
+                        <img class="indeximage d-block mx-auto rounded w3-container w3-center w3-animate-left" src="css/assets/explore.svg" id="image_explore">
                     </div>
                 </div>
                 <div class="col  ">
-                      <p class="text-center font-italic " style="font-size: 30px;"> "For the lessons are dark, and full of terrors" </p>
-                    <div class="col col-center d-block mx-auto my-auto">
-                    <p  class="text-left  d-block mx-auto my-auto" style="font-size: 20px;"> Every engineering student knows lessons are complicated enough, so why should get to class be hard as well? 
-                        Start using Uniboors right now and enjoy your trip to class!
-                    </p>
-                    
+                    <div style="margin-top: 30px;">
+
+                        <p class="text-center font-italic " style="font-size: 30px;"> "For the lessons are dark, and full of terrors" </p>
+                        <div class="col col-center d-block mx-auto my-auto">
+                            <p  class="text-left  d-block mx-auto my-auto" style="font-size: 20px;"> Every engineering student knows lessons are complicated enough, so why should get to class be hard as well? 
+                                Start using Uniboors right now and enjoy your trip to class!
+                            </p>
+
+                        </div>
+
+
+                        <button class="btn btn-secondary btn-lg mx-auto my-auto d-block" id="find_classes_btn" onclick="onClickFindYourClass()">Find your class</button>
                     </div>
-                  
-                    
-                    <button class="btn btn-secondary btn-lg mx-auto my-auto d-block" id="find_classes_btn" onclick="onClickFindYourClass()">Find your class</button>
+
                 </div>
             </div>
         </div>
         <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 30px; ">
             <hr>
-            <h1 class="display-4 text-center">Simple and intuitive</h1>
-            <div class="row" style="margin-top: 50px;margin-bottom: 30px;">
+            <h1 class="display-4 text-center title">Simple and intuitive</h1>
+            <div class="row" id="easy" style="margin-top: 50px;margin-bottom: 30px;">
                 <div class="col">
                     <p class="text-center font-italic" style="font-size: 30px;">All your lessons available everywhere, anytime</p>
                     <p class="text-center" style="font-size: 20px; margin-top: 30px;">Uniboors strength is its simplicity: enter in the website and easily find your lesson. Did you forget where Web Applications' lesson is? Do you not remember if there is a laboratory session or a regular lecture? Not a problem! All the necessary information are daily updated for you
@@ -118,17 +119,17 @@
                 </div>
                 <div class="col">
                     <div>
-                        <img class="rounded w3-container w3-center w3-animate-right" src="css/assets/sistemi_informativi.svg" id="image_explore">
+                        <img class="indeximage  d-block mx-auto rounded w3-container w3-center w3-animate-right" src="css/assets/sistemi_informativi.svg" id="image_explore">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 30px; ">
             <hr>
-            <h1 class="display-4 text-center">UnIndoors... right in your pocket!</h1>
-            <div class="row">
+            <h1 class="display-4 text-center title">UnIndoors... right in your pocket!</h1>
+            <div class="row" style="margin-top: 50px;margin-bottom: 30px;">
                 <div class="col">
-                    <img class="rounded w3-container w3-center w3-animate-left" src="css/assets/simple.jpg" id="image_explore">
+                    <img class="indeximage d-block mx-auto rounded w3-container w3-center w3-animate-left" src="css/assets/simple.jpg" id="image_explore">
                 </div>
                 <div class="col">
                     <p class="text-center font-italic " style="font-size: 30px;">UnIndoors is a web app fully compatible with any kind of device</p>
@@ -138,7 +139,7 @@
             </div>
             <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 30px; ">
                 <hr>
-                <h1 class="display-4 text-center">Accessibility is the key</h1>
+                <h1 class="display-4 text-center title">Accessibility is the key</h1>
                 <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
                     <div class="col ">
                         <p class="text-center font-italic mx-auto my-auto" style="font-size: 30px;">Going to classroom should be an easy task for everyone</p>
@@ -147,46 +148,23 @@
                     </div>
                     <div class="col">
                         <div>
-                            <img class="rounded w3-container w3-center w3-animate-right" src="css/assets/kindness.svg" id="image_explore">
+                            <img class="indeximage d-block mx-auto rounded w3-container w3-center w3-animate-right" src="css/assets/kindness.svg" id="image_explore">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style=" margin-top: 30px; margin-bottom: 0px; background-color:#424949;" align="middle">
-            <p>&nbsp;</p>
-            <h2 style="color:white;font-weight:100;">Edge technology is the core of UnIndoors</h2>
-            <div class="col">
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/Boostrap_logo.svg">&nbsp;&nbsp;
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/html5.svg">&nbsp;&nbsp;
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/css-logo.svg">&nbsp;&nbsp;
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/javascript-logo.svg">&nbsp;&nbsp;
-            </div>
-            <p>&nbsp;</p>
-            <h2 style="color:white;font-weight:100;">Multi-Platform experience</h2>
-            <div class="col">
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/firebase-1.svg">&nbsp;&nbsp;
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/Android_robot.svg">&nbsp;&nbsp;
-                <img style=" margin-top: 20px;" height="80" width="80" src="css/assets/icon-bluetooth-option.svg">&nbsp;&nbsp;
-            </div>
-            <div class="col" align="middle" style="margin-top:30px;">
-                <img  src="logo.png" id="logo">
-                <h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6>
-                <p>&nbsp;</p>
-            </div>
-        </div>
-<!--
-         <footer class="footer">
+        <footer class="footer">
 
             <div class="container-fluid" >
                 <div class="row align-items-center" >
                     <div class="col"></div>
                     <div class="col-auto ">
                         <div class="container " >
-                        <img class="d-block my-auto" height="80" width="200" src=logo.png>
-                        <h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6>
+                            <img class="d-block my-auto" height="80" width="200" src=logo.png>
+                            <h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6>
                         </div>
-                        
+
                     </div>
                     <div class="col"></div>
                 </div>
@@ -194,15 +172,143 @@
             </div>
 
         </footer>
--->
     </body>
     <script type="text/javascript" src="js/responsive.js"></script>
     <script>
         //deleting previous stored cookies
-        $(document).ready(logOut())
+        $(document).ready(function(){
+            logOut()
+            var width=$(window).width()
+            resizeRows(width)
+            if(width>=1000){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
 
+
+
+                if(title.hasClass('display-3')){
+
+                    title.removeClass('display-3')
+                    title.addClass('display-2')
+                }
+                if(col.hasClass('col-4')){
+                    col.removeClass('col-4')
+                    col.addClass('col-2 ')
+                }
+
+
+
+            }
+            if(width>=768 && width<1000){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
+
+                if(title.hasClass('display-2')){
+                    title.removeClass('display-2')
+                    title.addClass('display-3')
+                }
+                else{
+                    title.removeClass('display-4')
+                    title.addClass('display-3')
+                }
+
+
+            }
+            if(width<768){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
+
+                if(title.hasClass('display-3')){
+                    title.removeClass('display-3')
+                    title.addClass('display-4')
+                }
+                if(title.hasClass('display-2')){
+                    title.removeClass('display-2')
+                    title.addClass('display-4')
+                }
+                if(col.hasClass('col-2')){
+                    col.removeClass('col-2')
+                    col.addClass('col-3 ')
+                }
+
+            }
+            var button=jQuery('.btn')
+            if(width<400 && button.hasClass('btn-lg')){
+
+                button.removeClass('btn-lg')
+
+            }
+            else if(width>400 && !button.hasClass('btn-lg')){
+                button.addClass('btn-lg')
+            }        
+
+        })
+        $(window).resize(function(){
+
+            var width=$(window).width()
+            resizeRows(width)
+            if(width>=1000){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
+
+
+
+                if(title.hasClass('display-3')){
+
+                    title.removeClass('display-3')
+                    title.addClass('display-2')
+                }
+                if(col.hasClass('col-4')){
+                    col.removeClass('col-4')
+                    col.addClass('col-2 ')
+                }
+
+
+
+            }
+            if(width>=768 && width<1000){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
+
+                if(title.hasClass('display-2')){
+                    title.removeClass('display-2')
+                    title.addClass('display-3')
+                }
+                else{
+                    title.removeClass('display-4')
+                    title.addClass('display-3')
+                }
+
+
+            }
+            if(width<768){
+                var title=jQuery('.title')
+                var col=jQuery('.col-dir')
+
+                if(title.hasClass('display-3')){
+                    title.removeClass('display-3')
+                    title.addClass('display-4')
+                }
+                if(title.hasClass('display-2')){
+                    title.removeClass('display-2')
+                    title.addClass('display-4')
+                }
+                if(col.hasClass('col-2')){
+                    col.removeClass('col-2')
+                    col.addClass('col-3 ')
+                }
+
+            }
+            var button=jQuery('.btn')
+            if(width<400 && button.hasClass('btn-lg')){
+
+                button.removeClass('btn-lg')
+
+            }
+            else if(width>400 && !button.hasClass('btn-lg')){
+                button.addClass('btn-lg')
+            }                })
 
     </script>
 
 </html>
-

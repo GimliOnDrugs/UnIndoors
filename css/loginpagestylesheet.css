@@ -32,9 +32,11 @@
     margin-top: 40px;
 
 }
-#image_explore{
-    max-width: 600px;
-    max-height: 500px;
+ .indeximage{
+    min-width: 410px;
+    min-height: 290px;
+    max-width: 520px;
+    max-height: 380px;
     height:100%;
     width: 100%;
 }
@@ -123,11 +125,18 @@
         height: 60px;
         width: 180px;
     }
-    #image_explore{
-        min-width: 300px;
-        min-height: 300px;
+    .title{
+        font-size: 40px;
     }
 
+   .indeximage{
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 300px;
+    height:100%;
+    width: 100%;
+}
 
     .centered{
         height: 60vh;
@@ -149,9 +158,5 @@
 
 
 }
-@media only screen and (max-width: 500px){
-
-}
-
 
 

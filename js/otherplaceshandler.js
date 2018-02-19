@@ -527,9 +527,13 @@ function getTime(timeStart,timeEnd,id,lessonDayValue){
 
                 break;
             case 1:
-                if(currentMinute>0){
+                if(timeDifference<0 && currentMinute>0){
                     return 60-currentMinute+' minutes hence'
 
+                }
+                if(timeDifference>0){
+                    return timeToPrint
+                    
                 }
                 break;
             default:

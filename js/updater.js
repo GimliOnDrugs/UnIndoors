@@ -15,9 +15,9 @@ var database=firebase.database()
 
 
 self.onmessage=function(msg){
-    firebase.auth().signInWithEmailAndPassword('gzano93@gmail.com','metallaro93').then(success=>{
-        console.log(msg.data)
+    firebase.auth().signInWithEmailAndPassword('giacomo@operatore.com','metallaro93').then(success=>{
         updateCurrentLesson()
+        console.log('updater called at '+new Date().getSeconds())
 
     })
 }
@@ -134,7 +134,7 @@ function getLesson(lessonsPerClassroom,id){
 
 
     }
-    console.log(temp.lessonName)
+
     var islessonCurrent=temp.dayValue!=currentDay || temp.timeEnd<currentHour?'Next':'Current'
     database.ref('CesenaCampus/'+temp.place+'/').child('lesson').set({
         'lessonName':temp.lessonName,
@@ -143,6 +143,16 @@ function getLesson(lessonsPerClassroom,id){
         'timeStart':temp.timeStart,
         'timeEnd':temp.timeEnd,
         'dayValue':temp.dayValue
+    }).then(success=>{
+        var debug={
+            'lessonName':temp.lessonName,
+            'state':islessonCurrent,
+            'teacher':temp.teacher,
+            'timeStart':temp.timeStart,
+            'timeEnd':temp.timeEnd,
+            'dayValue':temp.dayValue
+        }
+        console.log(debug)
     })
 
 
