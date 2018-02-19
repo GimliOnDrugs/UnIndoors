@@ -10,9 +10,7 @@ function listenToHelpRequestChanges(){
                     var jumbotronNoMessage='<div class="jumbotron" id="nomessage" style="background-color:#57626E"><h1 class="display-4 text-center text-capitalize" style="color:white;">no help request yet!</h1><img src="css/assets/error-404.svg" class="rounded mx-auto d-block" style="margin-top:30px;width:150px; height:"150px"></div>'
                     $('#help_request_container').append(jumbotronNoMessage)
                     $('.loader').remove()
-                    if( $('.footer').children().length==0)
 
-                        $('.footer').append('<div class="container-fluid" ><div class="row align-items-center" ><div class="col"></div><div class="col-auto "><div class="container " ><img class="d-block my-auto" height="80" width="200" src=logo.png><h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6></div></div><div class="col"></div></div></div>')
 
                 }
             })
@@ -22,8 +20,7 @@ function listenToHelpRequestChanges(){
                 var domElement='<div class="jumbotron" style="background-color:#57626E" id="jumb_'+index+'"><div class="container"> <div class="row justify-content-center"><div class="col-8 "><h1 class="display-4 text-left detail" style="color:white;">'+renderDay(childsnapshot.child('day').val())+', '+childsnapshot.child('dayofmonth').val()+'/'+childsnapshot.child('month').val()+'/'+childsnapshot.child('year').val()+' at '+childsnapshot.child('request_time').val()+'</h1></div><div class="col-3 "><img src="css/assets/garbage.svg" class="icon-small float-right" id="garbage_'+index+'"></div></div><div class=" row justify-content-center" style="margin-top: 35px; " ><div class="col-2 col-dir align-self-center  icon_wrapper" style="  margin-top:30px"><img  class="icon" src="css/assets/map.svg" ></div><div class="col align-self-center " style="margin-top: 30px;" margin-left ><p class="detail display-4 text-left text-capitalize " id="whereabouts_'+index+'" style="color: white;"></p></div><div class="col-2 align-self-center col-dir icon_wrapper"  style=" margin-top:30px"><img  class="icon" src="css/assets/clock.svg" ></div><div class="col align-self-center "  style="margin-top: 30px;"><p class="detail  display-4 text-left text-capitalize" id="time_'+index+'" style="color: white;"></p></div></div><div class=" row justify-content-center" ><div class="col-2 align-self-center icon_wrapper col-dir" style="margin-top:30px"><img  class="icon" src="css/assets/pending.svg" id="request_icon_'+index+'"></div><div class="col align-self-center no-gutters" style="margin-top: 30px;" ><p class="detail display-4 text-left text-capitalize " id="request_status_'+index+'" style="color: white;"></p></div><div class="col-2 col-dir align-self-center icon_wrapper"  style="margin-top:30px"><img  class="icon" src="css/assets/message.svg" ></div><div class="col align-self-center "  style="margin-top: 30px;"><p class="detail  display-4 text-left" id="operator_message_'+index+'" style="color: white;"></p></div></div></div>'
                 $('#nomessage').remove()
                 $('.loader').remove()
-                if( $('.footer').children().length==0)
-                    $('.footer').append('<div class="container-fluid" ><div class="row align-items-center" ><div class="col"></div><div class="col-auto "><div class="container " ><img class="d-block my-auto" height="80" width="200" src=logo.png><h6 style="color:white; font-weight:100;">2018 - All rights reserved &copy;</h6></div></div><div class="col"></div></div></div>')
+                   
                 $('#help_request_container').append(domElement)
                 resizeHelprequests($(window).width())
                 $('#garbage_'+index).hover(function(){

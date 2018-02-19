@@ -1,4 +1,4 @@
-window.setInterval(checkTimeAndLesson,60000)
+window.setInterval(checkTimeAndLesson,1000)
 window.setInterval(checkInterestPlaces,60000)
 
 
@@ -354,6 +354,7 @@ function listClassrooms(){
 }
 
 function checkTimeAndLesson(){
+    console.log(new Date().getSeconds())
     database.ref('CesenaCampus/').on('child_added',childsnapshot=>{
         var classroomName=childsnapshot.child('name').val()
         var key=childsnapshot.key
