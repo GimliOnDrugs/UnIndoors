@@ -3,7 +3,11 @@
 }
 
 body{
+    /*   s height: 100%;*/
     background-color: #343a40;
+}
+html{
+    height:  100%
 }
 
 .dropdown-menu{
@@ -21,7 +25,10 @@ body{
 }
 
 .footer{
+    position: relative;
+    right: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: auto;
     background-color:#424949;
@@ -86,7 +93,7 @@ h1{
     .detail{
         font-size: 40px;
     }
-   
+
 
 }
 @media only screen and (max-width:850px){
@@ -106,7 +113,7 @@ h1{
 
 }
 @media only screen and (max-width:380px){
- .detail{
+    .detail{
         font-size: 30px;
 
     }

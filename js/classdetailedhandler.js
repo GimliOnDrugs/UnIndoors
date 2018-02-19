@@ -186,6 +186,7 @@ function getPlaceDetails(todayclass){
             $('#handy').attr('data-target','#help_request')
             $('#handy').attr('aria-expanded','false')
             $('#handy').attr('aria-controls','#help_request')
+            $('#handy').css("cursor","pointer")
         }
         $('#teacher_name').text(todayclass.teacher)
         var date = new Date();
@@ -231,7 +232,16 @@ function onClickSubmit(){
         name='Lab. Inf. 3'
 
     }
-
+ database.ref('users/'+id+'/').once('value').then(snap=>{
+     if(snap.hasChild('numberofhelprequests')){
+         var currentValue=snap.child('numberofhelprequests').val()
+        database.ref('users/'+id+'/numberofhelprequests').set(currentValue+1)
+     }
+     else{
+         database.ref('users/'+id+'/numberofhelprequests').set(0)
+     }
+ })
+    
 
     database.ref('users/'+id+'/helprequests/').once('value').then(function(snapshot){
         if(!snapshot.hasChildren()){

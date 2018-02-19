@@ -20,7 +20,7 @@
         <!--        <script src="js/bootstrap.bundle.js"></script>-->
 
 
-<!--        <script src="js/updater.js"></script>-->
+        <!--        <script src="js/updater.js"></script>-->
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 
         <script>
@@ -36,7 +36,7 @@
             firebase.initializeApp(config);
             var database=firebase.database()
             var worker=new Worker('js/updater.js')
-           // updateCurrentLesson()
+            // updateCurrentLesson()
 
 
 
@@ -50,7 +50,7 @@
         </script>
         <script src="js/otherplaceshandler.js"></script>
         <script src="js/userstatus.js"></script>
-
+        <script src="js/navbar.js"></script>
 
         <script>
 
@@ -89,13 +89,9 @@
                     </li>
                     <li class="vl"></li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="LogIn.html">Log in</a>
+                        <a class="nav-link active" href="LogIn.html">Log out</a>
                     </li>
-                    <li class="nav-item">
 
-                        <img src="css/assets/boy.svg" style="width:90px; max-height:65px;">
-
-                    </li>
 
 
                 </ul>
@@ -116,7 +112,7 @@
             </div>
         </div>
 
-        <div class="container" style="margin-top: 80px; margin-bottom: 100px; " id="other_places">
+        <div class="container" style="margin-top: 80px; margin-bottom: 100px;  " id="other_places">
             <h1 class="display-2 text-center title"  >Places of Interest</h1>
 
             <div class="list-group" id="interest_list">
@@ -150,6 +146,7 @@
         $( window ).on('load',function(){
             listClassrooms()
             listOtherPlaces()
+            setNavbar()
             resize($(window).width())
         })
 

@@ -5,7 +5,10 @@
     margin-bottom: 30px;
 }
 .footer{
+    position: relative;
+    right: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: auto;
     background-color:#424949;
@@ -17,7 +20,9 @@
     width:80px;
     height: 80px;
 }
-
+body,html{
+    height:100%
+}
 .icon{
     width: 90px;
     height: 90px;
